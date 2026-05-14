@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prajwal HK | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:#f8fafc;
+      line-height:1.7;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      background:rgba(15,23,42,0.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      font-size:0.95rem;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:100px;
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero-text h1 span{
+      color:#38bdf8;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      margin-bottom:30px;
+      font-size:1rem;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:1px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .btn-outline:hover{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+    }
+
+    .photo-placeholder{
+      width:350px;
+      height:350px;
+      border-radius:30px;
+      background:linear-gradient(145deg,#1e293b,#0f172a);
+      border:2px dashed rgba(255,255,255,0.2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#94a3b8;
+      font-size:1.1rem;
+      text-align:center;
+      padding:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      margin-bottom:20px;
+      color:#38bdf8;
+      text-align:center;
+      font-weight:700;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      color:#cbd5e1;
+      margin-bottom:60px;
+    }
+
+    /* ABOUT */
+
+    .about-card{
+      background:#111c34;
+      padding:40px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#111c34;
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .skill-card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    .skill-card ul{
+      padding-left:18px;
+      color:#cbd5e1;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline{
+      position:relative;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:20px;
+      top:0;
+      width:3px;
+      height:100%;
+      background:#38bdf8;
+    }
+
+    .timeline-item{
+      position:relative;
+      margin-left:60px;
+      margin-bottom:40px;
+      background:#111c34;
+      padding:25px;
+      border-radius:18px;
+    }
+
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-51px;
+      top:28px;
+      width:18px;
+      height:18px;
+      background:#38bdf8;
+      border-radius:50%;
+    }
+
+    .timeline-item h3{
+      color:#38bdf8;
+      margin-bottom:8px;
+    }
+
+    .timeline-item p{
+      color:#cbd5e1;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#111c34;
+      padding:30px;
+      border-radius:22px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    .project-tech{
+      color:#94a3b8;
+      margin-bottom:15px;
+      font-size:0.9rem;
+    }
+
+    /* CONTACT */
+
+    .contact-wrapper{
+      text-align:center;
+      background:#111c34;
+      padding:50px;
+      border-radius:25px;
+    }
+
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:30px;
+      flex-wrap:wrap;
+    }
+
+    .contact-links a{
+      padding:14px 24px;
+      background:#0f172a;
+      border-radius:12px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-links a:hover{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:3rem;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .photo-placeholder{
+        width:280px;
+        height:280px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .nav-content{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .nav-links{
+        gap:16px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:2.4rem;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+      .timeline::before{
+        left:10px;
+      }
+
+      .timeline-item{
+        margin-left:40px;
+      }
+
+      .timeline-item::before{
+        left:-40px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Prajwal HK</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+        <h1>Hi, I'm <span>Prajwal HK</span></h1>
+
+        <p>
+          Information Science Engineering student, builder, creator, and emerging entrepreneur.
+          I love solving real-world problems through impactful technology, AI-powered systems,
+          collaborative innovation, and modern web experiences.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="photo-placeholder">
+          Your Photo Here
+          <br><br>
+          Replace this placeholder with your image
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        A student walking the bridge between technology and impact.
+      </p>
+
+      <div class="about-card">
+        <p>
+          I am currently pursuing B.Tech in Information Science Engineering at
+          M.S. Ramaiah University of Applied Sciences with a CGPA of 8.13.
+          My journey revolves around AI, software development, entrepreneurship,
+          open-source contribution, and real-world innovation.
+        </p>
+
+        <br>
+
+        <p>
+          I actively participate in hackathons, startup ecosystems, and collaborative
+          projects that solve practical problems. From AI-powered collaborative coding
+          platforms to agriculture-focused initiatives, I enjoy building products that
+          create meaningful change.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">
+        Tech stack, tools, and strengths I bring to the table.
+      </p>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Basic Haskell</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Database & Backend</h3>
+          <ul>
+            <li>MongoDB</li>
+            <li>SQL</li>
+            <li>Database Management</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Tools & Platforms</h3>
+          <ul>
+            <li>GitHub</li>
+            <li>VS Code</li>
+            <li>PyCharm</li>
+            <li>Canva</li>
+            <li>Claude</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Leadership</li>
+            <li>Problem Solving</li>
+            <li>Communication</li>
+            <li>Creative Thinking</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+    <div class="container">
+
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">
+        Startup ecosystems, AI interfaces, and real-world collaboration.
+      </p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h3>AI User Interface Design Intern</h3>
+          <p><strong>3Skill</strong></p>
+          <p>
+            Worked on AI-assisted frontend development and user-interface design.
+            Contributed to startup ecosystem analysis and personal brand development.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>YouStart Fellow Intern (Current)</h3>
+          <p>
+            Part of a premium startup validation program focused on transforming
+            innovative ideas into impactful solutions through technical and business support.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+    <div class="container">
+
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        Building products that solve real problems.
+      </p>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>Collab-Code</h3>
+
+          <div class="project-tech">
+            Python • HTML • AI Assistance • Chatbot Systems
+          </div>
+
+          <p>
+            A real-time collaborative coding platform for technical interviews,
+            pair programming, and coding reviews with AI-powered assistance.
+          </p>
+
+          <br>
+
+          <a href="#" target="_blank">🔗 Project Link</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Campus Gadget Pro</h3>
+
+          <div class="project-tech">
+            HTML • CSS • JavaScript • MongoDB
+          </div>
+
+          <p>
+            A platform focused on solving urgent gadget-related student problems
+            with fast issue reporting and quick response systems.
+          </p>
+
+          <br>
+
+          <a href="#" target="_blank">🔗 Project Link</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Agrovision</h3>
+
+          <div class="project-tech">
+            HTML • CSS • JavaScript
+          </div>
+
+          <p>
+            An agriculture-focused initiative helping farmers through technology,
+            drone assistance, and digital accessibility in remote areas.
+          </p>
+
+          <br>
+
+          <a href="#" target="_blank">🔗 GitHub Repository</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container">
+
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        Let’s build something impactful together.
+      </p>
+
+      <div class="contact-wrapper">
+
+        <h3>Get In Touch</h3>
+
+        <p style="margin-top:15px;color:#cbd5e1;">
+          Open for collaborations, internships, startup discussions,
+          hackathons, and innovative opportunities.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:hkprajwal78@gmail.com">Email</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">GitHub</a>
+          <a href="tel:9482655350">Call</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Prajwal HK • Crafted with ambition, caffeine, and code.
+  </footer>
+
+</body>
+</html>
